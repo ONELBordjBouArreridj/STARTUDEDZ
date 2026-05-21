@@ -1,0 +1,36 @@
+{
+  "name": "STARTUDE DZ 4.0",
+  "short_name": "STARTUDE",
+  "description": "المسابقة الوطنية للطلبة الجامعيين لريادة الأعمال والابتكار",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0f16",
+  "theme_color": "#006233",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./startude-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./startude-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./startude-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./startude-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

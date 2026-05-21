@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#006233" />
+    
+    <!-- SEO Optimization -->
+    <title>STARTUDE DZ 4.0 | المسابقة الوطنية للطلبة الجامعيين</title>
+    <meta name="description" content="البوابة الرسمية لمسابقة STARTUDE DZ 4.0 - المسابقة الوطنية للطلبة الجامعيين لريادة الأعمال والابتكار. سجل مشروعك الناشئ الآن وساهم في بناء اقتصاد المعرفة." />
+    <meta name="keywords" content="STARTUDE DZ, ONEL, مسابقة وطنية, الطلبة الأحرار, جامعة الجزائر, مؤسسة ناشئة, الابتكار, ريادة الأعمال الطلابية, الجزائر" />
+    <meta name="author" content="National Organization of Free Students (ONEL)" />
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="./manifest.json" />
+    
+    <!-- iOS PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="STARTUDE" />
+    <link rel="apple-touch-icon" href="./startude-logo.png" />
+    
+    <!-- OpenGraph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="STARTUDE DZ 4.0 | المسابقة الوطنية للطلبة الجامعيين" />
+    <meta property="og:description" content="سجل فكرتك أو مشروعك المبتكر الآن في مسابقة ريادة الأعمال الطلابية الكبرى في الجزائر." />
+    <meta property="og:image" content="./startude-logo.png" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="STARTUDE DZ 4.0 | المسابقة الوطنية للطلبة الجامعيين" />
+    <meta name="twitter:description" content="سجل فكرتك أو مشروعك المبتكر الآن في مسابقة ريادة الأعمال الطلابية الكبرى في الجزائر." />
+    <meta name="twitter:image" content="./startude-logo.png" />
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      body {
+        background: radial-gradient(circle at top right, #0a192f, #02060d) !important;
+        color: #f0f4f8;
+      }
+    </style>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/tsparticles.bundle.min.js"></script>
+  </head>
+  <body>
+
+    <div class="app-container">
+      
+      <!-- Navbar -->
+      <header class="navbar-container glass-panel">
+        <div class="navbar-content">
+          <div class="logo">
+            <a href="./index.html" style="display: flex; align-items: center; gap: 0.8rem;">
+              <img src="./startude-logo.png" alt="STARTUDE Logo" style="height: 40px; width: auto; object-fit: contain;" />
+              <h2>STARTUDE DZ <span>🚀</span></h2>
+            </a>
+          </div>
+
+          <nav class="nav-links">
+            <a href="./index.html" data-i18n="nav.home">الرئيسية</a>
+            <a href="#about" data-i18n="nav.about">عن المسابقة</a>
+            <a href="#axes" data-i18n="nav.axes">المحاور</a>
+            <a href="#registration" data-i18n="nav.registration">التسجيل</a>
+            <a href="#contact" data-i18n="nav.contact">التواصل</a>
+          </nav>
+
+          <div class="nav-actions">
+            <button class="lang-toggle btn-secondary">
+              <i class="fas fa-globe"></i> <span class="lang-toggle-text">EN</span>
+            </button>
+            <a href="./admin.html" class="btn-primary admin-btn">
+              <i class="fas fa-cog"></i> <span data-i18n="nav.dashboard">لوحة التحكم</span>
+            </a>
+            <button class="mobile-menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main style="min-height: 80vh;">
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+          <div id="tsparticles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
+          
+          <div class="container hero-content">
+            <div class="hero-text">
+              <h1 class="text-gradient" data-i18n="hero.title">STARTUDE DZ 4.0</h1>
+              <p class="hero-subtitle" data-i18n="hero.subtitle">مسابقة وطنية تهدف إلى تحويل أفكار الطلبة إلى مؤسسات ناشئة ومشاريع مبتكرة تساهم في بناء اقتصاد المعرفة في الجزائر.</p>
+              
+              <div class="hero-actions" id="hero-registration-actions">
+                <!-- Registration Button injected dynamically by JS -->
+              </div>
+
+              <!-- Countdown Container -->
+              <div class="countdown-container glass-panel" id="countdown-container">
+                <p data-i18n="hero.countdown_text">الوقت المتبقي لانتهاء التسجيل</p>
+                <div class="timer">
+                  <div class="time-box">
+                    <span id="timer-days">0</span>
+                    <small id="lbl-days">أيام</small>
+                  </div>
+                  <div class="time-box">
+                    <span id="timer-hours">0</span>
+                    <small id="lbl-hours">ساعات</small>
+                  </div>
+                  <div class="time-box">
+                    <span id="timer-mins">0</span>
+                    <small id="lbl-mins">دقيقة</small>
+                  </div>
+                  <div class="time-box">
+                    <span id="timer-secs">0</span>
+                    <small id="lbl-secs">ثانية</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-image">
+              <div class="rocket-container">
+                <span class="rocket-emoji">🚀</span>
+                <div class="rocket-glow"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Organizers Section -->
+        <section class="organizers-section" id="organizers">
+          <div class="container">
+            <h2 class="section-title" data-i18n="organizers.title">الجهة المنظمة والشركاء</h2>
+            <p class="section-desc" data-i18n="organizers.text">تنظم هذه المسابقة من طرف المنظمة الوطنية للطلبة الأحرار (ONEL)، بالتعاون مع مختلف الشركاء من مؤسسات أكاديمية وحاضنات أعمال، بهدف دعم الابتكار وريادة الأعمال لدى الطلبة.</p>
+
+            <div class="organizers-grid">
+              <div class="org-card glass-panel">
+                <div class="org-icon">
+                  <img src="./onel-logo.png" alt="ONEL Logo" style="width: 100%; height: 100%; object-fit: contain; padding: 0; transform: scale(1.15);" />
+                </div>
+                <h3 data-i18n="organizers.onel">المنظمة الوطنية للطلبة الاحرار ONEL</h3>
+              </div>
+
+              <div class="org-card glass-panel">
+                <div class="org-icon">
+                  <img src="./ministry-logo.png" alt="Ministry Logo" style="width: 100%; height: 100%; object-fit: contain; background-color: white; padding: 10px;" />
+                </div>
+                <h3 data-i18n="organizers.digital_incubator">حاضنة الأعمال الرقمية بوزارة التعليم العالي والبحث العلمي</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+          <div class="container">
+            <h2 class="section-title" data-i18n="about.title">عن المسابقة</h2>
+            
+            <div class="about-content">
+              <div class="about-text">
+                <p class="lead" data-i18n="about.text1">في ظل التحولات الرقمية المتسارعة، أصبحت المؤسسات الناشئة ركيزة أساسية للاقتصاد الحديث.</p>
+                <p data-i18n="about.text2">تأتي مسابقة STARTUDE DZ 4.0 كمنصة وطنية تهدف إلى تمكين الطلبة من تحويل أفكارهم إلى مشاريع حقيقية، من خلال مرافقة علمية، تدريبية، وتنافسية.</p>
+              </div>
+
+              <div class="about-goals glass-panel">
+                <h3 data-i18n="about.goals">الأهداف</h3>
+                <ul class="goals-list">
+                  <li>
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <span data-i18n="about.goal1">نشر ثقافة الابتكار وريادة الأعمال</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <span data-i18n="about.goal2">تحويل الأفكار إلى مشاريع قابلة للتجسيد</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <span data-i18n="about.goal3">ربط الجامعة بالمحيط الاقتصادي</span>
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle goal-icon"></i>
+                    <span data-i18n="about.goal4">دعم الطلبة المبدعين</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Axes Section -->
+        <section class="axes-section" id="axes">
+          <div class="container">
+            <h2 class="section-title" data-i18n="axes.title">المحاور الاستراتيجية للمسابقة</h2>
+            <p class="section-desc" data-i18n="axes.text">ترتكز المسابقة على مجموعة من المحاور ذات الأولوية الوطنية، والتي تعكس احتياجات المجتمع والاقتصاد الجزائري.</p>
+
+            <div class="axes-grid">
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-leaf"></i></div>
+                <h3 data-i18n="axes.axis1">التنمية الخضراء والبيئة</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-landmark"></i></div>
+                <h3 data-i18n="axes.axis2">الهوية الوطنية والذاكرة</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-tractor"></i></div>
+                <h3 data-i18n="axes.axis3">الفلاحة الذكية والأمن الغذائي</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3 data-i18n="axes.axis4">الصحة الرقمية</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-solar-panel"></i></div>
+                <h3 data-i18n="axes.axis5">الطاقة والطاقات المتجددة</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3 data-i18n="axes.axis6">الأمن السيبراني والذكاء الاصطناعي</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-tint"></i></div>
+                <h3 data-i18n="axes.axis7">الأمن المائي</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3 data-i18n="axes.axis8">الاقتصاد الرقمي والتجارة الإلكترونية</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-running"></i></div>
+                <h3 data-i18n="axes.axis9">الرياضة الجامعية والرفاهية</h3>
+              </div>
+              <div class="axis-card glass-panel">
+                <div class="axis-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3 data-i18n="axes.axis10">الابتكار الاجتماعي والمواطنة</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section class="registration-section" id="registration">
+          <div class="container">
+            <div class="registration-card glass-panel">
+              <div class="registration-content">
+                <h2 data-i18n="registration.title">التسجيل في المسابقة</h2>
+                <p data-i18n="registration.text">ندعو جميع الطلبة والباحثين الشباب إلى المشاركة في هذه المسابقة الوطنية عبر تسجيل مشاريعهم وأفكارهم المبتكرة.</p>
+                <div id="registration-card-actions">
+                  <!-- Registration button or closed tag injected by JS -->
+                </div>
+              </div>
+              <div class="registration-bg-shape"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+          <div class="container">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <h3 class="text-gradient" id="stat-participants">+0</h3>
+                <p data-i18n="stats.participants">عدد المشاركين</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="text-gradient" id="stat-projects">+0</h3>
+                <p data-i18n="stats.projects">عدد المشاريع</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="text-gradient" id="stat-wilayas">+0</h3>
+                <p data-i18n="stats.wilayas">عدد الولايات المشاركة</p>
+              </div>
+              <div class="stat-card">
+                <h3 class="text-gradient" id="stat-partners">+0</h3>
+                <p data-i18n="stats.partners">عدد الشركاء</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+          <div class="container">
+            <h2 class="section-title" data-i18n="contact.title">تواصل معنا</h2>
+            <p class="section-desc" data-i18n="contact.text">لأي استفسار أو معلومات إضافية، يرجى التواصل معنا عبر القنوات التالية.</p>
+
+            <div class="contact-container glass-panel">
+              <div class="contact-info">
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                  <div class="contact-details">
+                    <h4 data-i18n="contact.address">العنوان:</h4>
+                    <p id="contact-address-val">بن عكنون – الجزائر العاصمة</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                  <div class="contact-details">
+                    <h4 data-i18n="contact.phone">الهاتف:</h4>
+                    <p id="contact-phone-val" dir="ltr">+213 21 00 00 00</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-mobile-alt"></i></div>
+                  <div class="contact-details">
+                    <h4 data-i18n="contact.mobile">النقال:</h4>
+                    <p id="contact-mobile-val" dir="ltr">+213 550 00 00 00</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                  <div class="contact-details">
+                    <h4 data-i18n="contact.email">البريد الإلكتروني:</h4>
+                    <p id="contact-email-val">Startudedz@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="contact-map">
+                <div class="map-placeholder">
+                  <div class="map-overlay">
+                    <i class="fas fa-map-marker-alt map-icon"></i>
+                    <p>الجزائر العاصمة</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer-container glass-panel">
+        <div class="container footer-content">
+          <div class="footer-brand">
+            <h2>STARTUDE DZ <span>🚀</span></h2>
+            <p data-i18n="footer.onel">المنظمة الوطنية للطلبة الأحرار (ONEL)</p>
+          </div>
+          
+          <div class="footer-links">
+            <h3 data-i18n="footer.quick_links">روابط سريعة</h3>
+            <ul>
+              <li><a href="./index.html" data-i18n="nav.home">الرئيسية</a></li>
+              <li><a href="#about" data-i18n="nav.about">عن المسابقة</a></li>
+              <li><a href="#registration" data-i18n="nav.registration">التسجيل</a></li>
+              <li><a href="./terms.html" data-i18n="footer.terms">شروط الاستخدام</a></li>
+              <li><a href="./privacy.html" data-i18n="footer.privacy">سياسة الخصوصية</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h3 data-i18n="footer.social">وسائل التواصل الاجتماعي</h3>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/share/1B1pjuqfKP/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.tiktok.com/@startudedz?_r=1&_t=ZS-96HNYuN3NMC" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer.copyright">© 2026 STARTUDE DZ – جميع الحقوق محفوظة</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
